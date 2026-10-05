@@ -1,1 +1,14 @@
 
+name: First Workflow
+on: push
+jobs:
+  hello-job:
+      runs-on: ubuntu-latest
+      steps:
+          - name: "welcome"
+            run: echo "Welcome to the first workflow!"
+  bye-job:
+      runs-on: ubuntu-latest
+      steps:
+          - name: "greet"
+            run: echo "Hello from the bye job!"
