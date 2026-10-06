@@ -1,0 +1,41 @@
+name: Jobs Test
+
+on: workflow_dispatch
+
+jobs:
+  validate-html:
+    runs-on: self-hosted
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: Validate html file
+        run: test -f index.html
+
+    
+
+      
+  validate-js:
+    runs-on: self-hosted
+  
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: Validate js file
+        run: test -f script.js
+
+    
+  validate-code:
+    # needs: [validate-html, validate-js]
+    runs-on: self-hosted
+
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+
+      - name: Validate js code
+        run: node --check script.js
+
+      - name: Validate html code
+        run: npx htmlhint index.html
