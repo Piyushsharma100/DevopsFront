@@ -1,0 +1,16 @@
+name: Validate files
+
+on: push
+
+jobs:
+  validate-files:
+    runs-on: self-hosted
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v4
+        
+      - name: Validate html file
+        run: test -f index.html
+
+      - name: Validate script file
+        run: test -f script.js
