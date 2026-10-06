@@ -21,6 +21,7 @@ jobs:
 
       
   validate-js:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: self-hosted
   
     steps:
@@ -32,6 +33,7 @@ jobs:
 
     
   validate-code:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     needs: [validate-html, validate-js]
     runs-on: self-hosted
 
