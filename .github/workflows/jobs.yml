@@ -27,7 +27,7 @@ jobs:
 
     
   validate-code:
-    # needs: [validate-html, validate-js]
+    needs: [validate-html, validate-js]
     runs-on: self-hosted
 
     steps:
