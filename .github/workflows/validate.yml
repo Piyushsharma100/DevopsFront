@@ -17,3 +17,6 @@ jobs:
 
       - name: Validate js code
         run: node  --check script.js
+
+      - name: fail job intentionally
+        run: exit 1 #means job fail if 0 then job passed
