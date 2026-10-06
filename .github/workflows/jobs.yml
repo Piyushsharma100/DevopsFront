@@ -1,6 +1,6 @@
 name: Jobs Test
 
-on: workflow_dispatch
+on: push
 
 jobs:
   validate-html:
